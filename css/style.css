@@ -1,11 +1,151 @@
-.body {
+/* ---------- common ---------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
     height: 100%;
     line-height: 1;
-    font-size: 16px;
-    color:black;
+    font-size: 14px;
+    color: #252b42;
+    font-weight: 500;
+    font-family: 'Montserrat';
 }
 
 .wrapper {
     min-height: 100%;
     overflow: hidden;
+}
+
+/* adaptive ---------- отступ от краев (от залипания) */
+/* adaptive ---------- padding: 0px 15px; */
+/* adaptive ---------- чтобы не увеличивать размер контейнера */
+/* adaptive ---------- на величину padding */
+/* adaptive ---------- box-sizing: content-box; */
+._container {
+    max-width: 1046px;
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+
+/* ---------- header ---------- */
+
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.header__container {
+    display: flex;
+    min-height: 104px;
+    align-items: center;
+}
+
+/* adaptive ---------- уменьшение header */
+/* adaptive ---------- min-height: 70px; */
+@media (max-width: 479px) {
+    .header__container {
+        min-height: 70px;
+    }
+}
+
+.header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: inherit;
+}
+
+.header__menu {
+    margin: 0px 0px 0px 133px;
+}
+
+/* adaptive ---------- отступ меню от лого */
+@media (max-width: 992px) {
+    .header__menu {
+        margin: 0px 0px 0px 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header__menu {
+        margin: 0px 0px 0px 40px;
+    }
+}
+
+@media (max-width: 479px) {
+    .header__menu {
+        margin: 0px 0px 0px 20px;
+    }
+}
+
+/* adaptive ---------- отступ меню от верха (от залипания) */
+/* adaptive ---------- padding: 5px 0; */
+.menu {
+    padding: 5px 0;
+}
+
+/* adaptive ---------- подвижные пункты меню */
+/* adaptive ---------- flex-wrap: wrap; */
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu__item {
+    margin: 0px 0px 0px 21px;
+}
+
+.menu__item:not(:last-child) {
+    margin: 0px 21px 0px 0px;
+}
+
+/* adaptive ---------- подвижные пункты меню не слипаются по горизонтали */
+/* adaptive ---------- line-height: calc(24 / 14 * 100%); */
+.menu__link {
+    color: #737373;
+    font-weight: 600;
+    line-height: calc(24 / 14 * 100%);
+}
+
+/* adaptive ---------- увеличиние шрифта и автоматом line-height (calc) */
+/* adaptive ---------- font-size: 18px; */
+@media (max-width: 479px) {
+    .menu__link {
+        font-size: 18px;
+    }
 }
