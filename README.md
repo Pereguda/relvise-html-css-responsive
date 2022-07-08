@@ -3,6 +3,8 @@ Responsive website layout from scratch for beginners.
 Explanation of actions.     
 HTML CSS.    
 
+[The result of the training layout](https://pereguda.github.io/relvise-html-css-responsive/)
+
 **Thanks youtube channel FreelancerLifeStyle**    
 
 Video tutorials in Russian can be viewed at the following links:    
